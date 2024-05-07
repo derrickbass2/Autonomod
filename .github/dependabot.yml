@@ -1,0 +1,23 @@
+version: 2
+updates:
+  - package-ecosystem: pip  # Possible value for Python projects
+    directory: '/'           # Root directory containing pyproject.toml or requirements.txt
+    schedule:
+      interval: "weekly"     # Default frequency of checks
+    open-pull-requests-limit: 10                        
+    versioning-strategy: "auto"                         
+    ignore:                                              
+      - dependency-name: 'pytest'                      
+        version: '<3.5.0 || >=3.6.0 <3.7.0'             
+      - dependency-name: 'colorama'                     
+        version: '>=0.4.1 <0.4.2 || >=0.4.3 <0.4.4'     
+      - dependency-name: 'coverage'                     
+        version: '>=5.0.0 <5.1.0 || >=5.3.0 <5.4.0'     
+      - dependency-name: 'pycodestyle'                  
+        version: '>=2.5.0 <2.6.0 || >=2.7.0 <2.8.0'     
+      - dependency-name: 'pylint'                      
+        version: '>=2.5.0 <2.6.0 || >=2.7.0 <2.8.0'     
+      - dependency-name: 'twine'                        
+        version: '<3.0.0'                               
+      - dependency-name: 'wheel'                        
+        version: '<0.34.0'
